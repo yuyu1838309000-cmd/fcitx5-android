@@ -15,24 +15,26 @@ import org.gradle.kotlin.dsl.configure
 class AndroidPluginAppConventionPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
+        val mainApplicationId = target.providers.gradleProperty("mainApplicationId").get()
         target.extensions.configure<ApplicationExtension> {
             buildFeatures {
                 buildConfig = true
             }
             buildTypes {
                 release {
-                    buildConfigField("String", "MAIN_APPLICATION_ID", "\"org.fcitx.fcitx5.android\"")
+                    buildConfigField("String", "MAIN_APPLICATION_ID", "\"$mainApplicationId\"")
                     addManifestPlaceholders(
                         mapOf(
-                            "mainApplicationId" to "org.fcitx.fcitx5.android",
+                            "mainApplicationId" to mainApplicationId,
                         )
                     )
                 }
                 debug {
-                    buildConfigField("String", "MAIN_APPLICATION_ID", "\"org.fcitx.fcitx5.android.debug\"")
+                    val debugMainApplicationId = "$mainApplicationId.debug"
+                    buildConfigField("String", "MAIN_APPLICATION_ID", "\"$debugMainApplicationId\"")
                     addManifestPlaceholders(
                         mapOf(
-                            "mainApplicationId" to "org.fcitx.fcitx5.android.debug",
+                            "mainApplicationId" to debugMainApplicationId,
                         )
                     )
                 }

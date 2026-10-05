@@ -102,3 +102,6 @@ lint/tmp/
 
 ### Kotlin ###
 .kotlin/
+
+# Local project tooling/cache
+.tooling/
