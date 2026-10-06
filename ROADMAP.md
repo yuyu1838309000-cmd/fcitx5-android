@@ -1,6 +1,6 @@
 # Neryven IME — Roadmap
 
-## V0 — 独立、可构建、可日用的 Fcitx 基线
+## V0 — 独立、可构建、可日用的 Fcitx 基线 ✅ CLOSED
 
 目标：证明 fork 能安全成为 Neryven IME 的工程底座。V0 不做 AI，不大改 UI。
 
@@ -49,9 +49,10 @@
 目标：用户愿意长期用的中文输入法 + 最小可用 Companion。
 
 ### 输入/UI
-- 明显区别于上游的视觉与交互。
+- V1 第一阶段先完成 `V1_INPUT_EXPERIENCE.md`：同机参考采样 → 冻结输入体验 Brief → 再实现；在此之前不靠散改参数试手感。
+- 第一优先级是达到“愿意长期日用”的键盘几何、候选层与常用交互；明显区别于上游的视觉放在手感稳定之后。
 - 不全量 Compose 重写；优先保留稳定输入热路径。
-- 顶部 Companion avatar / Peek。
+- 顶部 Companion avatar / Peek 在普通输入体验通过后再加入。
 - 主 App 主页、完整聊天、角色/Provider/隐私设置。
 
 ### Standalone

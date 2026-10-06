@@ -3,7 +3,7 @@
 这是 Neryven IME 的唯一长期接班入口。
 
 ## 当前状态
-- 阶段：V0 foundation。
+- 阶段：V0 foundation CLOSED；进入 V1 输入体验设计。
 - 项目家族前缀：`Neryven`；输入法最终用户产品名仍是 TBD，当前工程名 `Neryven IME`。
 - 主仓：`yuyu1838309000-cmd/fcitx5-android`
 - 本地仓：`E:\NereviaIME`（历史本地目录名，仅本机路径，不代表品牌）
@@ -25,7 +25,7 @@
 1. 读本文件。
 2. 读 `DECISIONS.md`。
 3. 读 `ARCHITECTURE.md`。
-4. 只按当前阶段读取 `ROADMAP.md`、`UPSTREAM_COMPATIBILITY.md` 和必要代码。
+4. 只按当前阶段读取 `ROADMAP.md`、`UPSTREAM_COMPATIBILITY.md`、`V1_INPUT_EXPERIENCE.md` 和必要代码。
 5. 用 git、代码、构建与真机结果校验文档，不根据聊天记忆猜当前进度。
 
 ## 工作规则
@@ -40,7 +40,7 @@
 - 不为流程本身增加流程；发现重复、过度设计或无收益步骤时主动删减。
 
 ## 当前下一步
-1. 提交 V0 foundation 变更；不把 P1 手感问题混进这个基线提交。
-2. 进入 V1，第一优先级是输入手感与键盘层/候选层体验，而不是先叠 Companion。
-3. P1 剩余人工项（Emoji、用户词频/学习、第二个常用 App）在 V1 日用基线里补测。
+1. 按 `V1_INPUT_EXPERIENCE.md` 做同机参考采样：搜狗 vs 当前 Neryven/Fcitx 基线；先记录，不改参数。
+2. 冻结第一轮输入体验 Brief 后，再进入键盘层/候选层实现；不先叠 Companion，也不先做纯视觉皮肤。
+3. P1 剩余人工项（Emoji、用户词频/学习、第二个常用 App）在 V1 日用基线里顺手补测，不单独拉长测试流程。
 4. 官方 Fcitx5 + Neryven 双安装实测保留为发行/兼容验证项；当前 applicationId、authority、IPC 与 plugin identity 已静态和构建产物验证独立。
